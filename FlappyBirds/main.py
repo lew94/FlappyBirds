@@ -1,3 +1,9 @@
+from game import Game
+
+
 if __name__ == '__main__':
+    game = Game()
     while True:
-        pass
+        game.handle_events()
+        game.draw()
+        game.update()
