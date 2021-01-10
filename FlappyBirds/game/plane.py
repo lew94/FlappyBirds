@@ -18,6 +18,10 @@ class Plane(pygame.sprite.Sprite):
         self.rect.center = (75, self.y_pos)
         self.falling = True
 
+    def reset(self):
+        self.y_pos = Constants.screen_height / 2
+        self.rect.center = (75, self.y_pos)
+
     def update(self):
         self.frame_count += 1
         if self.frame_count > Constants.plane_frame_rate:
@@ -32,9 +36,7 @@ class Plane(pygame.sprite.Sprite):
             self.y_pos += Constants.plane_force
         else:
             self.y_pos -= Constants.plane_force
-
         self.rect.center = (75, self.y_pos)
-
         self.falling = True
 
     def apply_up(self):
